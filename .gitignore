@@ -5,9 +5,9 @@ __pycache__/
 
 # C extensions
 *.so
-*.yaml
 
-Logs/
+Logs_old/
+TSP_test*
 
 # Distribution / packaging
 .Python

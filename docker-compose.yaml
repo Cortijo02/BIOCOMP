@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  jupyter:
+    image: python:3.11-slim
+    container_name: tsp-ga-jupyter
+    working_dir: /app
+
+    volumes:
+      - ./:/app
+
+    ports:
+      - "4567:4567"
+
+    command: >
+      sh -c "
+      pip install --no-cache-dir --upgrade pip &&
+      pip install --no-cache-dir -r requirements.txt &&
+      pip install --no-cache-dir notebook &&
+      jupyter notebook --ip=0.0.0.0 --port=4567 --no-browser --allow-root
+      "
